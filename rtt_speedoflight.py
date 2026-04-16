@@ -16,14 +16,24 @@ import urllib.request
 # ─────────────────────────────────────────────
 
 TARGETS = {
-    "Tokyo":        {"url": "http://www.google.co.jp",   "coords": (35.6762,  139.6503), "continent": "Asia"},
-    "São Paulo":    {"url": "http://www.google.com.br",  "coords": (-23.5505, -46.6333), "continent": "S. America"},
-    "Lagos":        {"url": "http://www.google.com.ng",  "coords": (6.5244,     3.3792), "continent": "Africa"},
-    "Frankfurt":    {"url": "http://www.google.de",      "coords": (50.1109,    8.6821), "continent": "Europe"},
-    "Sydney":       {"url": "http://www.google.com.au",  "coords": (-33.8688, 151.2093), "continent": "Oceania"},
-    "Mumbai":       {"url": "http://www.google.co.in",   "coords": (19.0760,   72.8777), "continent": "Asia"},
-    "London":       {"url": "http://www.google.co.uk",   "coords": (51.5074,   -0.1278), "continent": "Europe"},
-    "Singapore":    {"url": "http://www.google.com.sg",  "coords": (1.3521,   103.8198), "continent": "Asia"},
+    # Original targets (Google TLDs)
+    "Tokyo":            {"url": "http://www.google.co.jp",   "coords": (35.6762,  139.6503), "continent": "Asia"},
+    "São Paulo":        {"url": "http://www.google.com.br",  "coords": (-23.5505, -46.6333), "continent": "S. America"},
+    "Lagos":            {"url": "http://www.google.com.ng",  "coords": (6.5244,     3.3792), "continent": "Africa"},
+    "Frankfurt":        {"url": "http://www.google.de",      "coords": (50.1109,    8.6821), "continent": "Europe"},
+    "Sydney":           {"url": "http://www.google.com.au",  "coords": (-33.8688, 151.2093), "continent": "Oceania"},
+    "Mumbai":           {"url": "http://www.google.co.in",   "coords": (19.0760,   72.8777), "continent": "Asia"},
+    "London (Google)":  {"url": "http://www.google.co.uk",   "coords": (51.5074,   -0.1278), "continent": "Europe"},
+    "Singapore":        {"url": "http://www.google.com.sg",  "coords": (1.3521,   103.8198), "continent": "Asia"},
+    # Additional university targets
+    "Sendai":           {"url": "http://www.tohoku.ac.jp",   "coords": (38.2682,  140.8694), "continent": "Asia"},
+    "Seoul":            {"url": "http://www.snu.ac.kr",      "coords": (37.4600,  126.9521), "continent": "Asia"},
+    "New Delhi":        {"url": "http://www.iitd.ac.in",     "coords": (28.5450,   77.1926), "continent": "Asia"},
+    "Santiago":         {"url": "http://www.uchile.cl",      "coords": (-33.4569, -70.6483), "continent": "S. America"},
+    "Johannesburg":     {"url": "http://www.wits.ac.za",     "coords": (-26.1900,  28.0300), "continent": "Africa"},
+    "Berlin":           {"url": "http://www.fu-berlin.de",   "coords": (52.4537,   13.2939), "continent": "Europe"},
+    "London":           {"url": "http://www.imperial.ac.uk", "coords": (51.4988,   -0.1749), "continent": "Europe"},
+    "Canberra":         {"url": "http://www.anu.edu.au",     "coords": (-35.2809,  149.1300), "continent": "Oceania"},
 }
 
 PROBES           = 15
