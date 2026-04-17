@@ -53,16 +53,14 @@ CONTINENT_COLORS = {
 # ─────────────────────────────────────────────
 
 def measure_rtt(url: str, probes: int = PROBES) -> dict:
-    """
-    Measure RTT to `url` using HTTP requests.
-    """
     samples = []
     lost    = 0
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"}
 
     for _ in range(probes):
         try:
             start = time.perf_counter()
-            urllib.request.urlopen(url, timeout=100)
+            requests.get(url, timeout=10, headers=headers, allow_redirects=True)
             elapsed_ms = (time.perf_counter() - start) * 1000
             samples.append(elapsed_ms)
         except Exception:
