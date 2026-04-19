@@ -60,7 +60,7 @@ def measure_rtt(url: str, probes: int = PROBES) -> dict:
     for _ in range(probes):
         try:
             start = time.perf_counter()
-            requests.get(url, timeout=10, headers=headers, allow_redirects=True)
+            requests.get(url, timeout=100, headers=headers, allow_redirects=True)
             elapsed_ms = (time.perf_counter() - start) * 1000
             samples.append(elapsed_ms)
         except Exception:
