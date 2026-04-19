@@ -56,8 +56,7 @@ def measure_rtt(url: str, probes: int = PROBES) -> dict:
     samples = []
     lost    = 0
     opener  = urllib.request.build_opener()
-    opener.addheaders = [("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36")]
-
+    
     for _ in range(probes):
         try:
             start = time.perf_counter()
